@@ -1,8 +1,7 @@
 .header {
   display: flex;
-  align-items: center;
+  
   justify-content: space-between;
-  padding-top: 41px;
   padding-left: 80px;
 }
 
@@ -15,13 +14,20 @@
   justify-content: space-between;
 }
 
-.li {
-    display: flex;
-    align-items: center;
-    padding-right: 25px;
+.item {
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+  font-family: Montserrat;
+  line-height: 20px;
+  align-items: center;
 }
 
-.li_link {
+.logo {
+  padding-top: 32px;
+}
+
+.item_link {
   text-decoration: none;
   color: #636363;
 }
