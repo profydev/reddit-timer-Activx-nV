@@ -5,4 +5,9 @@ import App from './App';
 import 'normalize.css';
 
 // eslint-disable-next-line react/jsx-filename-extension
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
