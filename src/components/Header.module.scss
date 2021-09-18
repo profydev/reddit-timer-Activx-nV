@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  
   justify-content: space-between;
   padding-left: 80px;
 }
@@ -21,13 +20,13 @@
   font-family: Montserrat;
   line-height: 20px;
   align-items: center;
+
+  .item_link {
+    text-decoration: none;
+    color: #636363;
+  }
 }
 
 .logo {
   padding-top: 32px;
-}
-
-.item_link {
-  text-decoration: none;
-  color: #636363;
 }

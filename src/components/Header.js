@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import classes from './Header.module.css';
+import classes from './Header.module.scss';
 import logo from '../assets/logo.svg';
 
 const Header = () => (
@@ -11,12 +11,16 @@ const Header = () => (
     <nav className={classes.nav}>
       <ul className={classes.list}>
         <li className={classes.item}>
-          <NavLink className={classes.item_link} to="/search">
+          <NavLink className={classes.item_link} to="/search/javascript">
             Search
           </NavLink>
         </li>
-        <li className={classes.item}>How it works</li>
-        <li className={classes.item}>About</li>
+        <li className={classes.item}>
+          <a href="#how-it-works" className={classes.item_link}>How it works</a>
+        </li>
+        <li className={classes.item}>
+          <a href="#about" className={classes.item_link}>About</a>
+        </li>
       </ul>
     </nav>
   </header>

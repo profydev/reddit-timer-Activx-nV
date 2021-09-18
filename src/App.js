@@ -6,7 +6,6 @@ import Header from './components/Header';
 
 const AppWrapper = styled.div`
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   background: #ffffff;
   font-size: 16px;
