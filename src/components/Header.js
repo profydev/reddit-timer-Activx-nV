@@ -15,8 +15,8 @@ const Header = () => (
             Search
           </NavLink>
         </li>
-        <li className={classes.item}>How it works</li>
-        <li className={classes.item}>About</li>
+        <li className={classes.item}><a href="#how-it-works" className={classes.item_link}>How it works</a></li>
+        <li className={classes.item}><a href="#about" className={classes.item_link}>About</a></li>
       </ul>
     </nav>
   </header>
