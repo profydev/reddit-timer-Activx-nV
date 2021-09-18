@@ -1,24 +1,36 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
-// import { Router } from 'react-router-dom';
 
 import Header from './components/Header';
 
 const AppWrapper = styled.div`
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background: #ffffff;
   font-size: 16px;
   font-style: normal;
+  font-family: Montserrat, sans-serif;
   font-weight: normal;
-  color: #636363;
+  line-height: 1.69;
+  color: #93918f;
 `;
 
 function App() {
   return (
-    <AppWrapper>
-      <Header />
-    </AppWrapper>
+    <Router>
+      <AppWrapper>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            Home
+          </Route>
+          <Route path="/search">Search</Route>
+          <Route>404 - Not Found</Route>
+        </Switch>
+      </AppWrapper>
+    </Router>
   );
 }
 
