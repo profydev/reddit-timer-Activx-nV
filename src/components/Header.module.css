@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  
+  justify-content: space-between;
+  padding-left: 80px;
+}
+
+.list {
+  list-style-type: none;
+  height: 100%;
+  margin-right: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+  line-height: 20px;
+}
+
+.logo {
+  padding-top: 32px;
+}
+
+.item_link {
+  text-decoration: none;
+  color: #636363;
+}
