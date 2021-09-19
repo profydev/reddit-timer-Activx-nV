@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -29,6 +30,7 @@ function App() {
           <Route path="/search">Search</Route>
           <Route>404 - Not Found</Route>
         </Switch>
+        <Footer />
       </AppWrapper>
     </Router>
   );

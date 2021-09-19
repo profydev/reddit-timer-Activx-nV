@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 99px;
+    margin: 0 auto;
+}
+
+.link {
+  font-size: 0.875em;
+  line-height: 1.0625em;
+  text-decoration: none;
+  color: #636363;
+}
+
+.profyLink {
+    display: block;
+    padding-left: 250px;
+}
+
+.terms {
+    display: block;
+    padding-right: 250px;
+}
+
+.logo {
+    display: block;
+}
