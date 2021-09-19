@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className={classes.footer}>
     <a
       className={`${classes.link} ${classes.profyLink}`}
-      href="https://ooloo.io/employers"
+      href="profy.dev/employers"
       target="_blank"
       rel="noreferrer"
     >
@@ -16,7 +16,9 @@ const Footer = () => (
     <NavLink to="/">
       <img src={logo} className={classes.logo} alt="reddit logo" />
     </NavLink>
-    <NavLink className={`${classes.link} ${classes.terms}`} to="/terms">Terms & Privacy</NavLink>
+    <NavLink className={`${classes.link} ${classes.terms}`} to="/terms">
+      Terms & Privacy
+    </NavLink>
   </footer>
 );
 

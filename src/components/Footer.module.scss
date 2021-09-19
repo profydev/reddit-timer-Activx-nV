@@ -1,9 +1,9 @@
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 99px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 99px;
+  margin: 0 auto;
 }
 
 .link {
@@ -14,15 +14,17 @@
 }
 
 .profyLink {
-    display: block;
-    padding-left: 250px;
+  display: flex;
+  padding-left: 250px;
 }
 
 .terms {
-    display: block;
-    padding-right: 250px;
+  display: flex;
+  padding-right: 250px;
 }
 
 .logo {
-    display: block;
+  display: flex;
+  padding-left: 50px;
+  padding-right: 50px;
 }
