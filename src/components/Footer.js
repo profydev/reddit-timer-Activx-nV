@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Footer.module.scss';
-import logo from '../assets/footer_logo.svg';
+import { ReactComponent as Logo } from '../assets/footer_logo.svg';
 
 const Footer = () => (
   <footer className={classes.footer}>
@@ -14,7 +14,7 @@ const Footer = () => (
       profy.dev
     </a>
     <NavLink to="/">
-      <img src={logo} className={classes.logo} alt="reddit logo" />
+      <Logo />
     </NavLink>
     <NavLink className={`${classes.link} ${classes.terms}`} to="/terms">
       Terms & Privacy
