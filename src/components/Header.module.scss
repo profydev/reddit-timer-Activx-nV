@@ -11,19 +11,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
 
-.item {
-  display: flex;
-  align-items: center;
-  padding-right: 25px;
-  font-family: Montserrat;
-  line-height: 20px;
-  align-items: center;
+  .item {
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+    font-family: Montserrat;
+    line-height: 20px;
+    align-items: center;
+    padding-bottom: 2px;
 
-  .item_link {
-    text-decoration: none;
-    color: #636363;
+    .item_link {
+      text-decoration: none;
+      color: #636363;
+    }
   }
 }
 

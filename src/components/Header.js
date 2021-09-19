@@ -11,15 +11,19 @@ const Header = () => (
     <nav className={classes.nav}>
       <ul className={classes.list}>
         <li className={classes.item}>
-          <NavLink className={classes.item_link} to="/search/javascript">
+          <NavLink to="/search/javascript" className={classes.item_link}>
             Search
           </NavLink>
         </li>
         <li className={classes.item}>
-          <a href="/#how-it-works" className={classes.item_link}>How it works</a>
+          <NavLink to="/#how-it-works" className={classes.item_link}>
+            How it works
+          </NavLink>
         </li>
         <li className={classes.item}>
-          <a href="/#about" className={classes.item_link}>About</a>
+          <NavLink to="/#about" className={classes.item_link}>
+            About
+          </NavLink>
         </li>
       </ul>
     </nav>
