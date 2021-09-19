@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className={classes.footer}>
     <a
       className={`${classes.link} ${classes.profyLink}`}
-      href="profy.dev/employers"
+      href="https://profy.dev/employers"
       target="_blank"
       rel="noreferrer"
     >
