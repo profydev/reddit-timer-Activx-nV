@@ -4,18 +4,19 @@
 // learn more: https://github.com/testing-library/jest-dom
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('Header', () => {
-  test('"How it works" link points to the correct page', () => {
+  test('"Logo is a link, that points to the correct target.', () => {
     render(
       <MemoryRouter>
         <App />
       </MemoryRouter>,
     );
-    const link = screen.getByRole('link', { name: /how it works/i });
-    userEvent.click(link);
+    const link = screen.getByRole('link', { name: 'footer_logo.svg' });
+    screen.debug(link);
+    // userEvent.click(link);
   });
 });
