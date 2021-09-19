@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  
   justify-content: space-between;
   padding-left: 80px;
 }
@@ -12,20 +11,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
 
-.item {
-  display: flex;
-  align-items: center;
-  padding-right: 25px;
-  line-height: 20px;
+  .item {
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+    font-family: Montserrat;
+    line-height: 20px;
+    align-items: center;
+    padding-bottom: 2px;
+
+    .item_link {
+      text-decoration: none;
+      color: #636363;
+    }
+  }
 }
 
 .logo {
   padding-top: 32px;
-}
-
-.item_link {
-  text-decoration: none;
-  color: #636363;
 }
