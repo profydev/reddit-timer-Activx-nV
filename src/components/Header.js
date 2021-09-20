@@ -16,14 +16,14 @@ const Header = () => (
           </NavLink>
         </li>
         <li className={classes.item}>
-          <NavLink to="/#how-it-works" className={classes.item_link}>
+          <a href="#how-it-works" className={classes.item_link}>
             How it works
-          </NavLink>
+          </a>
         </li>
         <li className={classes.item}>
-          <NavLink to="/#about" className={classes.item_link}>
+          <a href="#about" className={classes.item_link}>
             About
-          </NavLink>
+          </a>
         </li>
       </ul>
     </nav>

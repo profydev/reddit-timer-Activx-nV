@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   margin-top: 99px;
+  height: 100px;
 }
 
 .link {
@@ -16,10 +17,16 @@
 }
 
 .profyLink {
+  font-size: 14px;
   flex: 1;
 }
 
 .terms {
+  font-size: 14px;
   flex: 1;
   text-align: right;
+}
+
+.logo {
+  padding-top: 6px;
 }
