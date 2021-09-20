@@ -41,7 +41,7 @@ const Home = () => (
           This app was created during a course on
           <a
             className={classes.link}
-            href="https://profy.dev/employers"
+            href="https://profy.dev/"
             target="_blank"
             rel="noreferrer"
           >
