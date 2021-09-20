@@ -13,7 +13,7 @@ const Footer = () => (
     >
       profy.dev
     </a>
-    <NavLink to="/">
+    <NavLink className={classes.logo} to="/">
       <Logo />
     </NavLink>
     <NavLink className={`${classes.link} ${classes.terms}`} to="/terms">

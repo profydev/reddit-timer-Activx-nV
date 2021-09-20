@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  height: 100px;
   padding-left: 80px;
 }
 
@@ -11,14 +12,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 27px;
 
   .item {
     display: flex;
-    align-items: center;
     padding-right: 25px;
     font-family: Montserrat;
     line-height: 20px;
-    align-items: center;
     padding-bottom: 2px;
 
     .item_link {

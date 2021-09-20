@@ -1,0 +1,111 @@
+.link {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.btnLink {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.btnLink:hover {
+  cursor: pointer;
+  color: #636363;
+}
+
+.heatmapLink {
+  display: flex;
+  justify-content: center;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #636363;
+}
+
+.heatmap {
+  max-width: 1114px;
+  width: 95%;
+  height: auto;
+  margin-top: 31px;
+}
+
+.homePage__heading {
+  color: #000000;
+  text-align: center;
+  font-family: Bitter;
+  font-size: 38px;
+  line-height: 46px;
+  padding-top: 27px;
+  margin: 0;
+}
+
+.homePage__subtitle {
+  color: #93918f;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.homePage__searchBtn {
+  display: block;
+  margin: auto;
+  margin-top: 41px;
+  padding: 13.5px 14.83px 13.5px 15.17px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 9px;
+  text-align: center;
+  background: #fdb755;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.subredditName {
+  color: #93918f;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 42px;
+  margin-bottom: 0px;
+}
+
+.homePage__howitworks {
+  max-width: 738px;
+  margin: auto;
+  padding: 0 20px;
+  margin-top: 135px;
+}
+
+.homePage__howitworks_heading {
+  margin: 0;
+  color: #000000;
+  font-family: Bitter;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.homePage__howitworks_descr {
+  margin-top: 12px;
+}
+
+.homePage__about {
+  max-width: 738px;
+  margin: auto;
+  margin-top: 105px;
+  padding: 0 20px;
+}
+
+.homePage__about_heading {
+  margin: 0;
+  color: #000000;
+  font-family: Bitter;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.homePage__about_descr {
+  color: #93918f;
+  padding-top: 13px;
+  line-height: 27px;
+}
