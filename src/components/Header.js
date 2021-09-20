@@ -16,12 +16,12 @@ const Header = () => (
           </NavLink>
         </li>
         <li className={classes.item}>
-          <a href="#how-it-works" className={classes.item_link}>
+          <a href="/#how-it-works" className={classes.item_link}>
             How it works
           </a>
         </li>
         <li className={classes.item}>
-          <a href="#about" className={classes.item_link}>
+          <a href="/#about" className={classes.item_link}>
             About
           </a>
         </li>
