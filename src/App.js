@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/Home';
 import SearchPage from './pages/Search';
 
+
 const AppWrapper = styled.div`
   width: 100%;
   max-width: 1440px;
