@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { urlActions } from '../store/index';
 import classes from './SearchForm.module.scss';
@@ -11,7 +11,7 @@ const SearchForm = () => {
   const historyPathName = history.location.pathname.split('/search/').join('').trim();
   useEffect(() => {
     dispatch(urlActions.setURL(`/search/${historyPathName}`));
-  });
+  }, [dispatch, historyPathName]);
 
   const URL = useSelector((state) => state.URL.url);
   // const [subredditValue, setSubredditValue] = useState('javascript');
@@ -25,7 +25,7 @@ const SearchForm = () => {
     const inputURL = subredditInputRef.current.value.trim();
     dispatch(urlActions.setURL(`/search/${inputURL}`));
     // setSubredditValue(subredditInputRef.current.value.trim());
-    history.replace(`/search/${inputURL}`);
+    // history.replace(`/search/${inputURL}`);
   };
 
   return (
@@ -45,7 +45,9 @@ const SearchForm = () => {
               placeholder="javascript"
               value={URL.split('/search/').join('').trim()}
             />
-            <button type="submit">SEARCH</button>
+            <NavLink to={`/search/${URL.split('/search/').join('').trim()}`}>
+              <button type="submit">SEARCH</button>
+            </NavLink>
           </form>
         </section>
       </section>
