@@ -7,7 +7,6 @@ import logo from '../assets/logo.svg';
 
 const Header = () => {
   const dispatch = useDispatch();
-
   const URLHandler = () => {
     dispatch(urlActions.setURL('/search/javascript'));
   };
