@@ -1,19 +1,31 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { urlActions } from '../store/index';
 import classes from './SearchForm.module.scss';
 
 const SearchForm = () => {
+  const dispatch = useDispatch();
   const subredditInputRef = useRef('');
-  const [subredditValue, setSubredditValue] = useState('javascript');
   const history = useHistory();
+  const historyPathName = history.location.pathname.split('/search/').join('').trim();
+  useEffect(() => {
+    dispatch(urlActions.setURL(`/search/${historyPathName}`));
+  });
+
+  const URL = useSelector((state) => state.URL.url);
+  // const [subredditValue, setSubredditValue] = useState('javascript');
+
+  const URLStateHandler = () => {
+    dispatch(urlActions.setURL(`/search/${subredditInputRef.current.value.trim()}`));
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setSubredditValue(subredditInputRef.current.value.trim());
-    history.replace(`/search/${subredditValue}`);
-  };
-  const inputValueHandler = (event) => {
-    setSubredditValue(event.target.value.trim());
+    const inputURL = subredditInputRef.current.value.trim();
+    dispatch(urlActions.setURL(`/search/${inputURL}`));
+    // setSubredditValue(subredditInputRef.current.value.trim());
+    history.replace(`/search/${inputURL}`);
   };
 
   return (
@@ -25,13 +37,13 @@ const SearchForm = () => {
 
           <form onSubmit={submitHandler}>
             <input
-              onChange={inputValueHandler}
+              onChange={URLStateHandler}
               className={classes.subredditForm_input}
               id="new-subreddit"
               ref={subredditInputRef}
               type="text"
               placeholder="javascript"
-              value={subredditValue}
+              value={URL.split('/search/').join('').trim()}
             />
             <button type="submit">SEARCH</button>
           </form>
