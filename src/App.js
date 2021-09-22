@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import HomePage from './pages/Home';
+import SearchPage from './pages/Search';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -26,9 +27,11 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomePage />
           </Route>
-          <Route path="/search">Search</Route>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
           <Route>404 - Not Found</Route>
         </Switch>
         <Footer />
