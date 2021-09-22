@@ -28,8 +28,7 @@
     line-height: 17px;
     color: #000000;
     width: 350px;
-    height: 32px;
-    padding-left: 17px;
+    padding: 8px 2px 7px 17px;
   }
 
   button {
@@ -56,5 +55,24 @@
     font-size: 19px;
     line-height: 9px;
     text-align: center;
+  }
+}
+
+.loadingSpinner {
+  display: block;
+  margin: 0 auto;
+  margin-top: 56px;
+  animation: spinner 1.5s linear infinite;
+}
+
+.error {
+  font-size: 14px;
+  text-align: center;
+  color: red;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
   }
 }

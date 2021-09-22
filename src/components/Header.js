@@ -10,10 +10,13 @@ const Header = () => {
   const URLHandler = () => {
     dispatch(urlActions.setURL('/search/javascript'));
   };
+  const homeURLHandler = () => {
+    dispatch(urlActions.setURL('/'));
+  };
 
   return (
     <header className={classes.header}>
-      <Link to="/">
+      <Link onClick={homeURLHandler} to="/">
         <img src={logo} className={classes.logo} alt="reddit logo" />
       </Link>
       <nav className={classes.nav}>

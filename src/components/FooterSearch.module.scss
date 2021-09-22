@@ -1,0 +1,36 @@
+.footer {
+    max-width: 940px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 99px;
+    height: 100px;
+    position: fixed;
+    bottom: -1px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .link {
+    font-size: 0.875em;
+    line-height: 1.0625em;
+    text-decoration: none;
+    color: #636363;
+  }
+  
+  .profyLink {
+    font-size: 14px;
+    flex: 1;
+  }
+  
+  .terms {
+    font-size: 14px;
+    flex: 1;
+    text-align: right;
+  }
+  
+  .logo {
+    padding-top: 6px;
+  }
