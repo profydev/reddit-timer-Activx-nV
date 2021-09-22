@@ -17,10 +17,10 @@ const SearchForm = () => {
   const fetchTopPosts = async (subreddit) => {
     try {
       const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`,
+        `https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`,
       );
       if (!response.ok) {
-        throw new Error("Request failed. Network troubles or subreddit doesn't exist.");
+        throw new Error("Request failed. Subreddit doesn't exist or something else.");
       }
       const data = await response.json();
       console.log(data);
@@ -34,7 +34,7 @@ const SearchForm = () => {
     dispatch(urlActions.setURL(`/search/${historyPathName}`));
     setIsLoading(true);
     fetchTopPosts(historyPathName);
-  }, [dispatch, historyPathName, URL]);
+  }, [dispatch, historyPathName]);
 
   // const [subredditValue, setSubredditValue] = useState('javascript');
 
@@ -72,6 +72,7 @@ const SearchForm = () => {
               placeholder="javascript"
               value={URL.split('/search/').join('').trim()}
             />
+
             <button type="submit">SEARCH</button>
           </form>
         </section>
