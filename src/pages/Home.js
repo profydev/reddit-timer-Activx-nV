@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { urlActions } from '../store/index';
 import classes from './Home.module.scss';
 import heatmap from '../assets/heatmap.png';
 
-const Home = () => (
-  <>
+const Home = () => {
+  const dispatch = useDispatch();
+  const homeURLHandler = (url) => {
+    dispatch(urlActions.setURL(url));
+  };
+  return (
     <section className={classes.homePage}>
       <section className={classes.homePage__searchSection}>
         <h1 className={classes.homePage__heading}>No reactions to your reddit posts?</h1>
@@ -12,16 +18,28 @@ const Home = () => (
           Great timing, great results! Find the best time to post on your subreddit.
         </p>
 
-        <button type="button" className={classes.homePage__searchBtn}>
-          <Link className={classes.btnLink} to="/search/javascript">
+        <button
+          type="button"
+          onClick={() => {
+            homeURLHandler('/search/javascript');
+          }}
+          className={classes.homePage__searchBtn}
+        >
+          <NavLink className={classes.btnLink} to="/search/javascript">
             SHOW ME THE BEST TIME
-          </Link>
+          </NavLink>
         </button>
 
         <p className={classes.subredditName}>r/javascript</p>
-        <Link className={classes.heatmapLink} to="/search/javascript">
+        <NavLink
+          onClick={() => {
+            homeURLHandler('/search/javascript');
+          }}
+          className={classes.heatmapLink}
+          to="/search/javascript"
+        >
           <img src={heatmap} alt="heatmap table" className={classes.heatmap} />
-        </Link>
+        </NavLink>
       </section>
 
       <section id="how-it-works" className={classes.homePage__howitworks}>
@@ -39,12 +57,7 @@ const Home = () => (
         <h2 className={classes.homePage__about_heading}>About</h2>
         <div className={classes.homePage__about_descr}>
           This app was created during a course on
-          <a
-            className={classes.link}
-            href="https://profy.dev"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className={classes.link} href="https://profy.dev" target="_blank" rel="noreferrer">
             &nbsp;profy.dev&nbsp;
           </a>
           with the goal to implement a
@@ -63,7 +76,7 @@ const Home = () => (
         </div>
       </section>
     </section>
-  </>
-);
+  );
+};
 
 export default Home;

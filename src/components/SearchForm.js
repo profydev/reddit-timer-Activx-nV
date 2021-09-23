@@ -1,4 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, {
+  useRef, useEffect, useState, useCallback,
+} from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { urlActions } from '../store/index';
@@ -13,27 +15,36 @@ const SearchForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const historyPathName = history.location.pathname.split('/search/').join('').trim();
-
-  const fetchTopPosts = async (subreddit) => {
+  const fetchTopPosts = useCallback(async (subreddit, previousPosts = [], after = null) => {
     try {
-      const response = await fetch(
-        `https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`,
-      );
+      let url = `https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`;
+      if (after) {
+        url += `&after=${after}`;
+      }
+      console.log(url);
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Request failed. Subreddit doesn't exist or something else.");
       }
-      const data = await response.json();
-      console.log(data);
+      const { data } = await response.json();
+      const allPosts = [...previousPosts, ...data.children];
+      if (allPosts.length >= 500) {
+        console.log(allPosts);
+        return allPosts;
+      }
+      fetchTopPosts(URL.split('/search/').join('').trim(), allPosts, data.after);
     } catch (err) {
       setError(err.message || 'Something went wrong!');
     }
     setIsLoading(false);
-  };
+    return null;
+  }, [URL]);
 
   useEffect(() => {
     dispatch(urlActions.setURL(`/search/${historyPathName}`));
     setIsLoading(true);
     fetchTopPosts(historyPathName);
+    // eslint-disable-next-line
   }, [dispatch, historyPathName]);
 
   // const [subredditValue, setSubredditValue] = useState('javascript');
@@ -51,7 +62,7 @@ const SearchForm = () => {
     // setSubredditValue(subredditInputRef.current.value.trim());
     history.push(`/search/${inputURL}`);
 
-    fetchTopPosts(inputURL);
+    // fetchTopPosts(inputURL);
   };
 
   return (

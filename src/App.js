@@ -38,7 +38,7 @@ function App() {
           <Route>404 - Not Found</Route>
         </Switch>
         <Switch>
-          {URL.includes('/search/') || URL.includes('/search/') ? <FooterSearch /> : <Footer />}
+          {!URL.includes('/search/') || !URL.includes('/terms') ? <Footer /> : <FooterSearch />}
         </Switch>
       </AppWrapper>
     </Router>
