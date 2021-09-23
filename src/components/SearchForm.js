@@ -21,7 +21,7 @@ const SearchForm = () => {
       if (after) {
         url += `&after=${after}`;
       }
-      console.log(url);
+      // console.log(url);
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Request failed. Subreddit doesn't exist or something else.");
@@ -29,7 +29,7 @@ const SearchForm = () => {
       const { data } = await response.json();
       const allPosts = [...previousPosts, ...data.children];
       if (allPosts.length >= 500) {
-        console.log(allPosts);
+        // console.log(allPosts);
         return allPosts;
       }
       fetchTopPosts(URL.split('/search/').join('').trim(), allPosts, data.after);
