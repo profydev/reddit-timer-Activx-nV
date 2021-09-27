@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { urlActions } from '../store/index';
-import classes from './Footer.module.scss';
+import classes from './FooterSearch.module.scss';
 import { ReactComponent as Logo } from '../assets/footer_logo.svg';
 
-const Footer = () => {
+const FooterSearch = () => {
   const dispatch = useDispatch();
   const homeURLHandler = (url) => {
     dispatch(urlActions.setURL(url));
@@ -42,4 +42,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterSearch;

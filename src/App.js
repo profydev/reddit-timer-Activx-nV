@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FooterSearch from './components/FooterSearch';
 import HomePage from './pages/Home';
 import SearchPage from './pages/Search';
 
@@ -21,6 +23,7 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
+  const URL = useSelector((state) => state.URL.url);
   return (
     <Router>
       <AppWrapper>
@@ -34,7 +37,9 @@ function App() {
           </Route>
           <Route>404 - Not Found</Route>
         </Switch>
-        <Footer />
+        <Switch>
+          {!URL.includes('/search/') || !URL.includes('/terms') ? <Footer /> : <FooterSearch />}
+        </Switch>
       </AppWrapper>
     </Router>
   );
